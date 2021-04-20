@@ -19,8 +19,10 @@ resource "helm_release" "demo-app" {
   #   file("${path.module}/demo-app-values.yaml")
   # ]
 
-  // Hack to trigger reinstall if 
-  // chart files are updated
+  // Hack to trigger reinstall if chart
+  // files are updated by passing in an
+  // unused trigger value equal to the
+  // null resources output id.
   set {
     name  = "trigger"
     value = tostring(null_resource.chart-update.id)
