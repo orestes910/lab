@@ -1,4 +1,0 @@
-limitNamespace: false
-
-ingress:
-  enabled: false
